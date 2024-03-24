@@ -1756,7 +1756,7 @@ following properties:
 	"binding": {
 		"command": "workspace 2",
 		"event_state_mask": [
-			"Mod4"
+			"Super"
 		],
 		"input_code": 0,
 		"symbol": "2",
