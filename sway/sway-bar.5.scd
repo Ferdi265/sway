@@ -81,7 +81,7 @@ runtime.
 	error due to conflicting bar ids.
 
 *modifier* <Modifier>|none
-	Specifies the modifier key that shows a hidden bar. Default is _Mod4_.
+	Specifies the modifier key that shows a hidden bar. Default is _Super_.
 
 *output* <output>|\*
 	Restrict the bar to a certain output, can be specified multiple times. If

@@ -456,7 +456,7 @@ runtime.
 	Example:
 ```
 		# Execute firefox when alt, shift, and f are pressed together
-		bindsym Mod1+Shift+f exec firefox
+		bindsym Alt+Shift+f exec firefox
 ```
 
 	*bindcode* [--whole-window] [--border] [--exclude-titlebar] [--release] \
