@@ -35,6 +35,7 @@ static struct modifier_key {
 	{ XKB_MOD_NAME_LOGO, WLR_MODIFIER_LOGO },
 	{ "Super", WLR_MODIFIER_LOGO },
 	{ "Mod5", WLR_MODIFIER_MOD5 },
+	{ "AltGr", WLR_MODIFIER_MOD5 },
 };
 
 uint32_t get_modifier_mask_by_name(const char *name) {
