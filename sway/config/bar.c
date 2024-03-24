@@ -102,7 +102,7 @@ struct bar_config *default_bar_config(void) {
 	bar->strip_workspace_name = false;
 	bar->binding_mode_indicator = true;
 	bar->verbose = false;
-	bar->modifier = get_modifier_mask_by_name("Mod4");
+	bar->modifier = get_modifier_mask_by_name("Super");
 	bar->status_padding = 1;
 	bar->status_edge_padding = 3;
 	bar->workspace_min_width = 0;
