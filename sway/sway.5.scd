@@ -404,7 +404,7 @@ runtime.
 	_Lock_ (for Caps Lock), _Control_, _Mod1_ (for Alt), _Mod2_ (for Num Lock),
 	_Mod3_ (for XKB modifier Mod3), _Mod4_ (for the Logo key), and _Mod5_ (for
 	AltGr). In addition, you can use the aliases  _Ctrl_ (for Control), _Alt_
-	(for Alt), and _Super_ (for the Logo key).
+	(for Alt), _Super_ (for the Logo key), and _AltGr_ (for AltGr).
 
 	Unless the flag _--locked_ is set, the command will not be run when a
 	screen locking program is active. If there is a matching binding with
