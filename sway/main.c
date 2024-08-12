@@ -210,7 +210,8 @@ static const struct option long_options[] = {
 	{"get-socketpath", no_argument, NULL, 'p'},
 	{"unsupported-gpu", no_argument, NULL, 'u'},
 	{"socket", required_argument, NULL, 's'},
-	{"wayland-fd", required_argument, NULL, 'S'},
+	{"wayland-socket", required_argument, NULL, 'w'},
+	{"wayland-fd", required_argument, NULL, 'W'},
 	{0, 0, 0, 0}
 };
 
@@ -283,7 +284,11 @@ int main(int argc, char **argv) {
 			free(socket_name);
 			socket_name = strdup(optarg);
 			break;
-		case 'S': // --wayland-fd
+		case 'w': // --wayland-socket
+			free(socket_name);
+			socket_name = strdup(optarg);
+			break;
+		case 'W': // --wayland-fd
 			socket_fd = atoi(optarg);
 			break;
 		default:
@@ -304,6 +309,13 @@ int main(int argc, char **argv) {
 	// we let the flag override the environment variable
 	if (!allow_unsupported_gpu && unsupported_gpu_env) {
 		allow_unsupported_gpu = parse_boolean(unsupported_gpu_env, false);
+	}
+
+	// Parse wayland socket handover env vars
+	if (getenv("WAYLAND_SOCKET_NAME") != NULL && getenv("WAYLAND_SOCKET_FD") != NULL) {
+		free(socket_name);
+		socket_name = strdup(getenv("WAYLAND_SOCKET_NAME"));
+		socket_fd = atoi(getenv("WAYLAND_SOCKET_FD"));
 	}
 
 	// Fail if only one of --socket and --wayland-fd are given.
@@ -424,6 +436,7 @@ shutdown:
 	root_destroy(root);
 	root = NULL;
 
+	free(socket_name);
 	free(config_path);
 	free_config(config);
 
